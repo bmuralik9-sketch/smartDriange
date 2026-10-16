@@ -1,0 +1,350 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-app: #f8fafc;
+    --bg-surface: #ffffff;
+    --border-subtle: #e2e8f0;
+    --border-hover: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+  }
+
+  body {
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* =======================================================
+   MODERN CLEAN ENTERPRISE DESIGN SYSTEM (Linear / Vercel Style)
+   Ultra-crisp typography, 1px subtle borders, micro-elevation
+   ======================================================= */
+
+/* 1. Enterprise Card Surfaces */
+.ent-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.ent-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+}
+
+.ent-card-interactive {
+  cursor: pointer;
+}
+
+.ent-card-interactive:hover {
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+/* 2. Enterprise Buttons */
+.ent-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25rem;
+  border-radius: 8px;
+  padding: 6px 14px;
+  transition: all 0.15s ease;
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ent-btn-primary {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: 1px solid #0f172a;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.08);
+}
+
+.ent-btn-primary:hover {
+  background-color: #1e293b;
+  border-color: #1e293b;
+}
+
+.ent-btn-primary:active {
+  background-color: #334155;
+  transform: scale(0.99);
+}
+
+.ent-btn-secondary {
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.03);
+}
+
+.ent-btn-secondary:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+.ent-btn-secondary:active {
+  background-color: #f1f5f9;
+}
+
+.ent-btn-accent {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
+  box-shadow: 0 1px 2px 0 rgba(37, 99, 235, 0.2);
+}
+
+.ent-btn-accent:hover {
+  background-color: #1d4ed8;
+}
+
+.ent-btn-danger {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: 1px solid #dc2626;
+  box-shadow: 0 1px 2px 0 rgba(239, 68, 68, 0.2);
+}
+
+.ent-btn-danger:hover {
+  background-color: #dc2626;
+}
+
+.ent-btn-success {
+  background-color: #10b981;
+  color: #ffffff;
+  border: 1px solid #059669;
+}
+
+.ent-btn-success:hover {
+  background-color: #059669;
+}
+
+/* 3. Enterprise Input Fields */
+.ent-input {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #0f172a;
+  transition: all 0.15s ease;
+  outline: none;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.02);
+}
+
+.ent-input:focus {
+  border-color: #0f172a;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
+}
+
+.ent-input::placeholder {
+  color: #94a3b8;
+}
+
+/* 4. Enterprise Segmented Control / Tabs Container */
+.ent-segmented {
+  display: flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  padding: 3px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.ent-segmented-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 7px;
+  color: #64748b;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.ent-segmented-btn:hover {
+  color: #0f172a;
+}
+
+.ent-segmented-btn.active {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-weight: 600;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.08);
+}
+
+/* 5. Enterprise Status Badges */
+.ent-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  line-height: 1.25;
+}
+
+.ent-badge-green {
+  background-color: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
+}
+
+.ent-badge-amber {
+  background-color: #fffbeb;
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+.ent-badge-red {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+.ent-badge-blue {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.ent-badge-neutral {
+  background-color: #f1f5f9;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+
+/* 6. Leaflet Map Overrides for Clean Enterprise Look */
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08) !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 6px !important;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* Smooth Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =======================================================
+   ANIMATIONS: CANAL WATER, SENSORS RADAR & DRAINAGE FLOW
+   ======================================================= */
+@keyframes rainDrop {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(280px);
+    opacity: 0.2;
+  }
+}
+
+.animate-rain-drop {
+  animation: rainDrop 0.6s linear infinite;
+}
+
+/* Ultrasonic Radar Beam Sonar Waves */
+@keyframes sonarRing {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.animate-sonar-ring {
+  animation: sonarRing 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+/* Realistic Water Ripple Flow */
+@keyframes waveFlow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-wave-flow {
+  animation: waveFlow 4s ease-in-out infinite;
+}
+
+/* Telemetry Jitter Pulse Glow */
+@keyframes jitterPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(14, 165, 233, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+  }
+}
+
+.animate-jitter-pulse {
+  animation: jitterPulse 1.2s infinite;
+}
+
+/* ESP32 Hardware LED Blink */
+@keyframes ledFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.animate-led-blink {
+  animation: ledFlicker 0.4s ease-in-out infinite;
+}
+

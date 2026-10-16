@@ -1,0 +1,23 @@
+{
+  "name": "smart-drainage-management",
+  "version": "1.0.0",
+  "description": "IoT + AI-Assisted Smart Drainage and Urban Flood Monitoring System",
+  "scripts": {
+    "backend": "cd backend && npm start",
+    "backend:dev": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "iot",
+    "esp32",
+    "smart-city",
+    "drainage-management",
+    "flood-detection",
+    "react",
+    "nodejs",
+    "socketio"
+  ],
+  "author": "Mahe13185",
+  "license": "MIT"
+}
