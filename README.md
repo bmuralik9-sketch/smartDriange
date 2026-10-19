@@ -102,22 +102,14 @@
 - npm (v9 or higher)
 - Optional: MongoDB (running locally or MongoDB Atlas URI)
 
-### 1. Clone & Setup Workspace
+### 1. Install Dependencies
 ```bash
-# Navigate to workspace
-cd "c:\Users\bmura\Desktop\csp project"
-
-# Install backend dependencies
-cd backend
-npm install
-
-# Install frontend dependencies
-cd ../frontend
+# Install unified dependencies at root
 npm install
 ```
 
-### 2. Configure Environment Variables
-Copy `.env.example` to `backend/.env`:
+### 2. Configure Environment Variables (Optional)
+Create `.env` at root:
 ```env
 PORT=5000
 MONGODB_URI=mongodb://127.0.0.1:27017/smart_drainage
@@ -126,22 +118,31 @@ JWT_SECRET=super_secret_municipal_key_2026
 ```
 > **Note**: If MongoDB is not installed on your system, the server will automatically log a message and switch to the embedded resilient store without crashing.
 
-### 3. Start the Backend Server
+### 3. Development Mode
+Run both backend server and Vite client concurrently:
 ```bash
-cd backend
-npm start
-# Server will run at http://localhost:5000
-# Socket.IO active on port 5000
+npm run dev
+# Frontend runs at http://localhost:5173
+# Backend runs at http://localhost:5000
 ```
 
-### 4. Start the Frontend Application
-In a new terminal window:
+### 4. Production Build & Local Serve
+Build the client and serve the complete fullstack app from port 5000:
 ```bash
-cd frontend
-npm run dev
-# Vite will launch the app at http://localhost:5173
+npm run build
+npm start
+# Unified app runs at http://localhost:5000 (serves both API & Frontend SPA)
 ```
-Open `http://localhost:5173` in your browser.
+
+### ☁️ Deploy to Vercel (One-Click)
+1. Push repository to GitHub.
+2. In Vercel, click **Add New Project** and select this repository.
+3. Vercel automatically detects the single project root:
+   - **Framework Preset**: `Vite`
+   - **Root Directory**: `./` (default)
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+4. Click **Deploy**. Vercel serves the compiled React client and routes `/api/*` to serverless Express functions via [`vercel.json`](./vercel.json).
 
 ---
 
